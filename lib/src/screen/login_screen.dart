@@ -38,7 +38,7 @@ class _Login_ScreenState extends State<Login_Screen> with ValidateMixins {
               height: 160.0,
              ),
              Padding(
-                  padding: EdgeInsets.symmetric(vertical: 20.0),  
+                  padding: EdgeInsets.symmetric(vertical: 30.0),  
               ),
          
        
@@ -50,6 +50,18 @@ class _Login_ScreenState extends State<Login_Screen> with ValidateMixins {
         //la forma mas optima de hacer una margen es aqui 
         Container( margin: EdgeInsets.only(top: 40.0),),
         submitField(),
+         Padding(
+                  padding: EdgeInsets.symmetric(vertical: 10.0),  
+              ),
+      
+        InkWell(
+            child: Text(" ¿Olvidaste tu contraseña? ",
+            style: TextStyle( color :Colors.blueAccent)),
+            onTap: () async {
+           
+    
+  },
+),
 
          ],
 
@@ -66,13 +78,14 @@ class _Login_ScreenState extends State<Login_Screen> with ValidateMixins {
     Widget emailField(){
        
          return TextFormField(
-         keyboardType: TextInputType.emailAddress,
-         decoration: InputDecoration(
-         labelText: "Email",
-         hintText: "ejemplo@example.com",
-          icon: Icon(Icons.account_circle),
-         
+          keyboardType: TextInputType.emailAddress,
+          decoration: InputDecoration(
+          labelText: "Email",
+          hintText: "ejemplo@example.com",
+          icon: Icon(Icons.email),
+          
        ),  
+        
          validator: validateEmail,  
        );
    }
@@ -86,6 +99,7 @@ class _Login_ScreenState extends State<Login_Screen> with ValidateMixins {
          labelText: "Contraseña",
          hintText: "Contraseña",
          icon: Icon(Icons.lock),
+         
          
        ), 
        validator: (value){
@@ -107,8 +121,9 @@ class _Login_ScreenState extends State<Login_Screen> with ValidateMixins {
      
      return  RaisedButton(
       child:  Text("Ingresar"),
+      
        color: Colors.blue[300],
-       padding: EdgeInsets.symmetric(horizontal:110.0 ),
+       padding: EdgeInsets.symmetric(horizontal:130.0 ),
       shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
        //parametro vacio mientas 
       onPressed: (){

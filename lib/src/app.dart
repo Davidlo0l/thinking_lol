@@ -61,7 +61,11 @@ class _SplashScreenState extends State<SplashScreen> {
            
           )
         ),
-          new Text("LOADING...")
+        Padding(
+         padding: EdgeInsets.symmetric(vertical: 20.0),  
+            child :new Text("LOADING...")
+        ),
+       
         
           ]
        
